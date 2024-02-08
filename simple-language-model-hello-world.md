@@ -288,5 +288,56 @@ predicted_word = model.predict(prediction_vector)
 print(f"The predicted next word after '{input_string}' is: {predicted_word[0]}")
 ```
 
+### How to Bring Randomness
 
+```python
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn import svm 
+import numpy as np
+
+# Your data
+data = [
+    "I love to read books",
+    "The quick brown fox jumps",
+    "I prefer tea over coffee",
+    "Machine learning is an interesting field",
+    "Cal Poly Pomona has strong science majors"
+]
+
+input_data = [
+  "I love to read",
+  "The quick brown fox",
+  "I prefer tea over",
+  "Machine learning is an interesting",
+  "Cal Poly Pomona has strong science"
+]
+
+output_data = [
+  "books",
+  "jumps",
+  "coffee",
+  "field",
+  "majors"
+]
+
+# Vectorize the input data
+vectorizer = CountVectorizer()
+input_data_transformed = vectorizer.fit_transform(input_data)
+
+# Train the SVM model with probability estimation
+model = svm.SVC(probability=True)
+model.fit(input_data_transformed, output_data)
+
+# Example of making a prediction with randomness
+test_sentence = "I prefer tea over"
+test_sentence_transformed = vectorizer.transform([test_sentence])
+
+# Get probability distribution over all classes
+probabilities = model.predict_proba(test_sentence_transformed)[0]
+
+# Sample from the distribution to get a random prediction
+random_prediction = np.random.choice(model.classes_, p=probabilities)
+
+print("Random Prediction:", random_prediction)
+```
 
