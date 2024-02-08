@@ -1,4 +1,4 @@
-### A Simple Language Model Training 
+### A Simple Language Model Training  
 
 To illustrate how to train a basic language model using scikit-learn (sklearn), let's create a simple example. We will use a dummy text dataset consisting of few sentences. Here's an example dataset:
 
