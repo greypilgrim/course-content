@@ -177,4 +177,3 @@ scientific_facts_part1 = [
     "The human urinary system eliminates waste from the body, regulates blood volume and blood pressure, controls levels of electrolytes and metabolites, and regulates blood pH.",
     "A lunar eclipse occurs when the Earth comes between the Sun and the Moon, and the Earth's shadow falls on the Moon.",
     "The term 'astronomy' refers to the study of celestial objects, space, and the physical universe as a whole.",
-    "The &#8203;``【oaicite:0】``&#8203;
